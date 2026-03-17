@@ -1,0 +1,20 @@
+{
+  "function_name": "UserAgentLlmFn",
+  "args": {
+    "persona": "You are Maria Garcia, a small business owner who runs a bakery called 'Dulce Maria' in downtown. You are friendly but busy.",
+    "goals": "Get help generating an invoice for 200 cupcakes at $3.50 each for a corporate event",
+    "conversation_history": "[{\"role\": \"assistant\", \"content\": \"Hello! How can I help you today?\"}, {\"role\": \"user\", \"content\": \"Hi, I need help with an invoice\"}]",
+    "current_outbound_message": "Sure! What's your client's name and the invoice amount?",
+    "channel_type": "whatsapp",
+    "response_guidelines": "Be cooperative, answer directly, keep responses short"
+  },
+  "widget_params": {},
+  "prompt": "",
+  "event_type": "function_call",
+  "extra_params": {},
+  "files": [],
+  "metadata": {
+    "description": "Basic LLM test - simulated user responds to invoice question via WhatsApp",
+    "expected_status": "success"
+  }
+}

@@ -1,0 +1,49 @@
+function:
+  name: UserAgentLlmFn
+  runtime: python3.12
+  handler: handler.lambda_handler
+  description: >
+    Agente de usuario simulado para pruebas de pipeline. Genera respuestas
+    realistas como si fuera un usuario real interactuando por WhatsApp/email.
+    Recibe la conversación visible al usuario (sin eventos internos) y genera
+    la siguiente respuesta basándose en la persona, objetivos y guías configuradas.
+    Solo para uso en simulaciones de pipeline (is_test=True sessions).
+  timeout: 120
+  memory_size: 512
+  type: operator
+  llm_sockets:
+    - name: user_agent_context
+      description: "Contexto del agente de usuario simulado: persona, objetivos, historial de conversación"
+      required: true
+  layers:
+    - foundationMinimal
+    - foundationApi
+  parameters:
+    required:
+      - name: persona
+        type: string
+        description: "Identidad del usuario simulado (nombre, ocupación, contexto personal)"
+      - name: goals
+        type: string
+        description: "Objetivos del usuario simulado (qué quiere lograr en la conversación)"
+      - name: conversation_history
+        type: string
+        description: "Historial de conversación en formato JSON. Array de objetos {role: 'assistant'|'user', content: string}. Solo mensajes visibles al usuario."
+      - name: current_outbound_message
+        type: string
+        description: "El mensaje más reciente enviado por el sistema al usuario (el mensaje saliente bloqueado)"
+      - name: channel_type
+        type: string
+        description: "Canal de comunicación: whatsapp, email, webhook"
+    optional:
+      - name: response_guidelines
+        type: string
+        description: "Guías de comportamiento para generar respuestas (tono, estilo, restricciones)"
+      - name: pre_defined_responses
+        type: string
+        description: "JSON array de respuestas predefinidas [{pattern, response, file_url?}]. Se verifican antes del LLM."
+  widget:
+    enabled: false
+  testing:
+    handles_files: false
+    produces_files: false

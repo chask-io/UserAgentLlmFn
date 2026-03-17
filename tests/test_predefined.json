@@ -1,0 +1,20 @@
+{
+  "function_name": "UserAgentLlmFn",
+  "args": {
+    "persona": "Test user",
+    "goals": "Test pre-defined responses",
+    "conversation_history": "[]",
+    "current_outbound_message": "Could you send me the invoice file?",
+    "channel_type": "whatsapp",
+    "pre_defined_responses": "[{\"pattern\": \"invoice|file|document\", \"response\": \"Here is my invoice template\", \"file_url\": \"s3://test/invoice.pdf\"}]"
+  },
+  "widget_params": {},
+  "prompt": "",
+  "event_type": "function_call",
+  "extra_params": {},
+  "files": [],
+  "metadata": {
+    "description": "Pre-defined response test - pattern match returns deterministic response without LLM",
+    "expected_status": "success"
+  }
+}
