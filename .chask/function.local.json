@@ -1,0 +1,8 @@
+{
+	"function_uuid": "875a7eed-dcbf-4961-baa5-c111582e9512",
+	"organization_id": "c186a320-7f84-4004-b591-1b9880fb7bfd",
+	"last_published_at": "2026-03-17T13:43:43.850Z",
+	"function_arn": "UserAgentLlmFn-baa5c111582e9512",
+	"function_name": "UserAgentLlmFn",
+	"git_ref": "main"
+}
