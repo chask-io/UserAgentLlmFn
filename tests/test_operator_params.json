@@ -1,0 +1,16 @@
+{
+  "function_name": "UserAgentLlmFn",
+  "test_type": "operator_params",
+  "args": {},
+  "widget_params": {},
+  "prompt": "Simulate a user response. The user is Carlos Mendez, a restaurant owner who wants to place a catering order for 50 people. He has been chatting via WhatsApp. The last message from the system asked him for the event date and number of guests. He should respond cooperatively with the details.",
+  "event_type": "function_call",
+  "extra_params": {
+    "is_operator_params_test": true
+  },
+  "files": [],
+  "metadata": {
+    "description": "Test operator generating params for UserAgentLlmFn",
+    "expected_status": "success"
+  }
+}
