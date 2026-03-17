@@ -123,7 +123,7 @@ class FunctionBackend:
         try:
             response = llm_client.chat(
                 messages=messages,
-                temperature=0.9,
+                temperature=1,
                 caller_function="UserAgentLlmFn.process_request.user_agent_context",
             )
 
